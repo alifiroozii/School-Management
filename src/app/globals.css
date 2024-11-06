@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* rtl.css */
+body,
+body > * {
+  direction: rtl;
+  text-align: right;
+}
+
+.container {
+  direction: rtl;
+}
+
+.text-right {
+  text-align: right;
+}
+
+div,
+div > * {
+  direction: rtl;
+  text-align: right;
+}
