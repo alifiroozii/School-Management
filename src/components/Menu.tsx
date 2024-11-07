@@ -3,7 +3,6 @@ import Link from "next/link";
 
 const menuItems = [
   {
-  
     items: [
       {
         icon: "/home.png",
@@ -114,13 +113,13 @@ const Menu = () => {
     <div className="mt-4 text-sm">
       {menuItems.map((i) => {
         return (
-          <div className="flex flex-col gap-2 mt-12 " key={i.title}>
+          <div className="flex flex-col gap-2  " key={i.title}>
             {i.items.map((item) => {
               return (
                 <Link
                   href={item.href}
                   key={item.label}
-                  className="flex justify-center items-center lg:justify-start gap-4"
+                  className="flex justify-center items-center lg:justify-start gap-4 lg:py-1 transition mx-2 lg:mx-4 rounded-sm lg:pr-1 lg:hover:bg-[#ae94e534] text-gray-500"
                 >
                   <Image
                     src={item.icon}

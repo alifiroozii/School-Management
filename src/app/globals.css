@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "yekan";
+  src: url("../../public/font/BYekan+.ttf");
+}
+
+@font-face {
+  font-family: "yekanBold";
+  src: url("../../public/font/BYekan+\ Bold.ttf");
+}
+
 /* rtl.css */
 body,
 body > * {
   direction: rtl;
   text-align: right;
+  font-family: "yekan" !important;
 }
 
 .container {
@@ -21,4 +32,10 @@ div,
 div > * {
   direction: rtl;
   text-align: right;
+}
+
+div > *,
+button,input::placeholder {
+  font-family: "yekan" !important;
+
 }
