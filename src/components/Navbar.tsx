@@ -12,18 +12,18 @@ const Navbar = () => {
         <input
           type="text"
           placeholder="جستجو..."
-          className="focus:outline-none"
+          className="focus:outline-none bg-transparent"
         />
       </div>
 
       {/* icon , user */}
       <div className="flex justify-start items-center">
         <div className="flex items-center gap-3 ml-5">
-          <div className="bg-white rounded-full w-7 h-7 flex justify-center items-center cursor-pointer">
+          <div className="bg-white px-1  round-shadow rounded-full w-8 h-8 flex justify-center items-center cursor-pointer">
             <Image src="/message.png" width={20} height={20} alt="پیغام" />
           </div>
 
-          <div className="bg-white rounded-full w-7 h-7 flex justify-center items-center relative cursor-pointer">
+          <div className="bg-white px-2 round-shadow rounded-full w-8 h-8 flex justify-center items-center relative cursor-pointer">
             <Image
               src="/announcement.png"
               width={20}
@@ -36,7 +36,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex ">
+        <div className="flex  ">
           <div className="flex flex-col">
             <span className="text-xs leading-3 font-medium">نازنین حسینی</span>
             <span className="text-[10px] text-gray-500 text-left">مدیر</span>
@@ -46,7 +46,7 @@ const Navbar = () => {
             width={35}
             height={35}
             alt="کاربر"
-            className="rounded-full mx-3"
+            className="rounded-full mx-3 "
           />
         </div>
       </div>
