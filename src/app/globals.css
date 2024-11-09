@@ -44,4 +44,30 @@ input::placeholder {
   border-radius: 50px;
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+  transition: all 0.5s;
+}
+
+.round-shadow:hover {
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: inset 8px 8px 17px #d9d9d9, inset -8px -8px 17px #ffffff;
+}
+
+.rmdp-day .sd {
+  padding-right: 8px !important;
+}
+
+.rmdp-shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    width: 100% !important;
+
+  }
+
+.rmdp-calendar,.rmdp-calendar>div {
+  width: 100% !important;
+}
+.rmdp-day-picker>div{
+  width: 100% !important;
+  border-radius: 10px;
 }
