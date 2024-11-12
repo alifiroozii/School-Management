@@ -1,3 +1,5 @@
+"use client"
+import { role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -115,21 +117,23 @@ const Menu = () => {
         return (
           <div className="flex flex-col gap-2  " key={i.title}>
             {i.items.map((item) => {
-              return (
-                <Link
-                  href={item.href}
-                  key={item.label}
-                  className="flex justify-center items-center lg:justify-start gap-4 lg:py-1 transition mx-2 lg:mx-4 rounded-sm lg:pr-1 lg:hover:bg-[#ae94e534] text-gray-500"
-                >
-                  <Image
-                    src={item.icon}
-                    alt={item.label}
-                    width={20}
-                    height={20}
-                  />
-                  <span className="hidden lg:block">{item.label}</span>
-                </Link>
-              );
+              if (item.visible.includes(role)) {
+                return (
+                  <Link
+                    href={item.href}
+                    key={item.label}
+                    className="flex justify-center items-center lg:justify-start gap-4 lg:py-1 transition mx-2 lg:mx-4 rounded-sm lg:pr-1 lg:hover:bg-[#ae94e534] text-gray-500"
+                  >
+                    <Image
+                      src={item.icon}
+                      alt={item.label}
+                      width={20}
+                      height={20}
+                    />
+                    <span className="hidden lg:block">{item.label}</span>
+                  </Link>
+                );
+              }
             })}
           </div>
         );

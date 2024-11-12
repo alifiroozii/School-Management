@@ -1,8 +1,8 @@
 "use client";
-import Announcements from "@/components/Announcements";
 import AttendanceChart from "@/components/AttendanceChart";
 import CountChart from "@/components/CountChart";
 import EventCalendar from "@/components/EventCalendar";
+import Announcements from "@/components/Announcements";
 import FinanceChart from "@/components/FinanceChart";
 import UserCard from "@/components/UserCard";
 
@@ -10,9 +10,9 @@ import UserCard from "@/components/UserCard";
 
 const AdminPage = () => {
   return (
-    <div className="flex flex-col p-4 md:flex-row gap-8">
+    <div className="flex flex-col p-4 md:flex-row md:justify-between gap-8">
       {/* right */}
-      <div className="w-full lg:w-2/3 flex flex-col gap-8">
+      <div className="w-full md:w-[60%] lg:w-2/3 flex flex-col gap-8">
         {/* user card */}
 
         <div className="flex justify-between gap-5 flex-wrap">
@@ -50,7 +50,7 @@ const AdminPage = () => {
       </div>
 
       {/* left */}
-      <div className="w-full lg:w-1/3 flex flex-col gap-8 ">
+      <div className="w-full md:w-[32%]  lg:w-1/3 flex flex-col gap-8 ">
         <EventCalendar />
       <Announcements/>
       </div>

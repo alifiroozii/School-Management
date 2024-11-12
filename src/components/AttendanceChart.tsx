@@ -61,7 +61,7 @@ const AttendanceChart = () => {
         <BarChart width={500} height={300} data={data} barSize={20}>
           <CartesianGrid strokeDasharray="3 3"  vertical={false}/>
           <XAxis dataKey="name" axisLine={false} />
-          {/* <YAxis /> */}
+         
           <Tooltip  contentStyle={{borderRadius:'10px'}}/>
           <Legend align="right" />
           <Bar dataKey="حاضرین" fill="#65acf5" legendType="circle" radius={[10,10,0,0]} />

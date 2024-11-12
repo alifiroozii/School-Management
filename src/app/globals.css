@@ -12,11 +12,9 @@
   src: url("../../public/font/BYekan+\ Bold.ttf");
 }
 
-/* rtl.css */
 body,
 body > * {
   direction: rtl;
-  text-align: right;
   font-family: "yekan" !important;
 }
 
@@ -24,15 +22,11 @@ body > * {
   direction: rtl;
 }
 
-.text-right {
-  text-align: right;
-}
-
 div,
 div > * {
   direction: rtl;
-  text-align: right;
 }
+
 
 div > *,
 button,
@@ -71,3 +65,8 @@ input::placeholder {
   width: 100% !important;
   border-radius: 10px;
 }
+
+.rbc-active{
+  background-color: #ae94e588 !important;
+}
+
