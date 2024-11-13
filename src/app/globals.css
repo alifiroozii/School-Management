@@ -47,10 +47,6 @@ input::placeholder {
   box-shadow: inset 8px 8px 17px #d9d9d9, inset -8px -8px 17px #ffffff;
 }
 
-.rmdp-day .sd {
-  padding-right: 8px !important;
-}
-
 .rmdp-shadow {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;

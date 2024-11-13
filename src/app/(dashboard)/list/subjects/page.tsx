@@ -25,10 +25,8 @@ const TeacherList = () => {
           key={item.id}
           className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-slate-100"
         >
-          <td className="flex items-center gap-1 md:gap-4 p-1 md:p-4 pr-0">
-            <div className="flex flex-col">
-              <h3 className="font-semibold">{item.name}</h3>
-            </div>
+          <td className="gap-1 md:gap-4 p-1 md:p-4 pr-0">
+              {item.name}
           </td>
           <td className="">{item.teachers.join(" , ")}</td>
       
@@ -36,7 +34,7 @@ const TeacherList = () => {
             <div className="flex items-center justify-end gap-1 md:gap-4">
               <Link href={`/list/teachers/${item.id}`}>
                 <button className="w-7 h-7 flex justify-center items-center rounded-full bg-blueDark">
-                  <Image src="/view.png" alt="مشاهده" width={16} height={16} />
+                  <Image src="/edit.png" alt="مشاهده" width={16} height={16} />
                 </button>
               </Link>
               {role === "admin" && (

@@ -36,24 +36,24 @@ const menuItems = [
         href: "/list/classes",
         visible: ["admin", "teacher"],
       },
-      {
-        icon: "/lesson.png",
-        label: "درس ها",
-        href: "/list/lessons",
-        visible: ["admin", "teacher"],
-      },
+      // {
+      //   icon: "/lesson.png",
+      //   label: "درس ها",
+      //   href: "/list/lessons",
+      //   visible: ["admin", "teacher"],
+      // },
       {
         icon: "/exam.png",
         label: "امتحانات",
         href: "/list/exams",
         visible: ["admin", "teacher", "student"],
       },
-      {
-        icon: "/assignment.png",
-        label: "تکالیف",
-        href: "/list/assignments",
-        visible: ["admin", "teacher", "student"],
-      },
+      // {
+      //   icon: "/assignment.png",
+      //   label: "تکالیف",
+      //   href: "/list/assignments",
+      //   visible: ["admin", "teacher", "student"],
+      // },
       {
         icon: "/result.png",
         label: "نتایج",

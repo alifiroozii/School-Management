@@ -1,68 +1,56 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role, studentsData } from "@/lib/data";
+import { role, eventsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
-type Student = {
+type Events = {
   id: number;
-  studentId: string;
-  name: string;
-  email?: string;
-  phone?: number;
-  photo:string;
-  grade: number;
+  title: string;
   class: string;
-  address: string;
+  date: string;
+  startTime: string;
+  endTime: string;
 };
 
 const columns = [
-  { header: "اطلاعات", accessor: "info" },
+  { header: "رویداد", accessor: "title" },
   {
-    header: "شناسه دانش آموز",
-    accessor: "studentId",
+    header: " کلاس ",
+    accessor: "class",
     className: "hidden md:table-cell",
   },
   {
-    header: " معدل",
-    accessor: "grade",
+    header: " تاریخ",
+    accessor: "date",
+  },
+  {
+    header: " شروع ",
+    accessor: "startTime",
     className: "hidden md:table-cell",
   },
   {
-    header: " شماره ",
-    accessor: "phone",
+    header: " پایان  ",
+    accessor: "endTime",
     className: "hidden md:table-cell",
   },
-  {
-    header: " ادرس ",
-    accessor: "address",
-    className: "hidden md:table-cell",
-  } 
 ];
 
-const StudentList = () => {
-  const renderRow = (item: Student) => (
-    <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-slate-100">
-      <td className="flex items-center gap-4 p-4 pr-0">
-        <Image
-          src={item.photo}
-          alt="عکس دانش اموز"
-          width={40}
-          height={40}
-          className="md:hidden lg:block rounded-full w-10 h-10 object-cover"
-        />
-        <div className="flex flex-col">
-          <h3 className="font-semibold">{item.name}</h3>
-          <h4 className="text-xs text-gray-500">{item?.class}</h4>
-        </div>
-      </td>
-      <td className="hidden md:table-cell">{item.studentId}</td>
-      <td className="hidden md:table-cell">{item.grade}</td>
-      <td className="hidden md:table-cell">{item.phone}</td>
-      <td className="hidden md:table-cell">{item.address}</td>
+const EventsList = () => {
+  const renderRow = (item: Events) => (
+    <tr
+      key={item.id}
+      className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-slate-100"
+    >
+      <td className=" gap-1 md:gap-4 p-1 md:p-4 pr-0">{item.title}</td>
+      <td className=" hidden md:table-cell">{item.class}</td>
+      <td className="">{item.date} </td>
+      <td className="hidden md:table-cell">{item.startTime}</td>
+      <td className="hidden md:table-cell">{item.endTime}</td>
+
       <td>
-        <div className="flex itmes-center justify-end  gap-1 md:gap-4 ">
+        <div className="flex items-center justify-end gap-1 md:gap-4">
           <Link href={`/list/teachers/${item.id}`}>
             <button className="w-7 h-7 flex justify-center items-center rounded-full bg-blueDark">
               <Image src="/edit.png" alt="مشاهده" width={16} height={16} />
@@ -82,11 +70,11 @@ const StudentList = () => {
     <div className="bg-white rounded-md p-4 flex-1 m-4 mt-5 shadow-lg  ">
       {/* top */}
       <div className="flex items-center justify-between">
-        <h1 className=" hidden md:block font-semibold text-lg">دانش آموزان </h1>
+        <h1 className=" hidden md:block font-semibold text-lg">رویداد ها </h1>
         <div className="flex flex-col  items-center gap-4 w-full md:w-auto md:flex-row-reverse ">
           <TableSearch />
 
-          <div className="flex items-center justify-start w-full gap-4 selt-end">
+          <div className="flex justify-start w-full items-center gap-4 selt-end">
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PurpleLight">
               <Image src="/filter.png" alt="فیلتر" width={14} height={14} />
             </button>
@@ -95,21 +83,26 @@ const StudentList = () => {
               <Image src="/sort.png" alt="مرتب سازی" width={14} height={14} />
             </button>
 
-            {role==='admin'&&(
+            {role === "admin" && (
               <button className="w-8 h-8 flex items-center  justify-center rounded-full bg-PurpleLight">
-              <Image src="/plus.png" alt="اضافه کردن" width={14} height={14} />
-            </button>
+                <Image
+                  src="/plus.png"
+                  alt="اضافه کردن"
+                  width={14}
+                  height={14}
+                />
+              </button>
             )}
           </div>
         </div>
       </div>
 
       {/* list */}
-      <Table columns={columns} renderRow={renderRow} data={studentsData} />
+      <Table columns={columns} renderRow={renderRow} data={eventsData} />
       {/* pagination */}
       <Pagination />
     </div>
   );
 };
 
-export default StudentList;
+export default EventsList;
