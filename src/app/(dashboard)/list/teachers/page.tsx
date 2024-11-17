@@ -74,7 +74,7 @@ const TeacherList = () => {
         <div className="flex itmes-center gap-1 justify-end md:gap-4">
           <Link href={`/list/teachers/${item.id}`}>
             <button className="w-7 h-7 flex justify-center items-center rounded-full bg-blueDark">
-              <Image src="/view.png" alt="مشاهده" width={16} height={16} />
+              <Image src="/view.png" alt="مشاهده" width={18} height={18} />
             </button>
           </Link>
           {role === "admin" && (
@@ -96,16 +96,16 @@ const TeacherList = () => {
           <TableSearch />
 
           <div className="flex justify-start w-full items-center gap-4 selt-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PurpleLight">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full  round-shadow ">
               <Image src="/filter.png" alt="فیلتر" width={14} height={14} />
             </button>
 
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PurpleLight">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full round-shadow">
               <Image src="/sort.png" alt="مرتب سازی" width={14} height={14} />
             </button>
 
             {role === "admin" && (
-              <button className="w-8 h-8 flex items-center  justify-center rounded-full bg-PurpleLight">
+              <button className="w-8 h-8 flex items-center  justify-center rounded-full round-shadow">
                 <Image src="/plus.png" alt="اضافه کردن" width={14} height={14} />
               </button>
             )}

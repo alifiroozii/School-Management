@@ -12,6 +12,13 @@
   src: url("../../public/font/BYekan+\ Bold.ttf");
 }
 
+:root{
+  --clr-pink:#f34178;
+  --clr-blue:#37d1be;
+  --clr-blueDark:#119bd2;
+  --cle-purple:#9984f9;
+}
+
 body,
 body > * {
   direction: rtl;
@@ -27,7 +34,6 @@ div > * {
   direction: rtl;
 }
 
-
 div > *,
 button,
 input::placeholder {
@@ -38,7 +44,6 @@ input::placeholder {
   border-radius: 50px;
   background: linear-gradient(145deg, #e6e6e6, #ffffff);
   box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
-  transition: all 0.5s;
 }
 
 .round-shadow:hover {
@@ -50,19 +55,120 @@ input::placeholder {
 .rmdp-shadow {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
-    width: 100% !important;
-
-  }
-
-.rmdp-calendar,.rmdp-calendar>div {
   width: 100% !important;
 }
-.rmdp-day-picker>div{
+
+.rmdp-calendar,
+.rmdp-calendar > div {
+  width: 100% !important;
+}
+.rmdp-day-picker > div {
   width: 100% !important;
   border-radius: 10px;
 }
 
-.rbc-active{
+.rbc-active {
   background-color: #ae94e588 !important;
 }
 
+.input-search-table {
+  background: #f1f1f1;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+  transition: all 0.3s;
+}
+
+.input-search-table:hover {
+  box-shadow: 2px 2px 2px #d9d9d9, -2px -2px 2px #ffffff;
+}
+
+.box-one {
+  background-image: radial-gradient(
+      circle at 21% 44%,
+      rgba(23, 23, 23, 0.05) 0%,
+      rgba(23, 23, 23, 0.05) 50%,
+      rgba(109, 109, 109, 0.05) 50%,
+      rgba(109, 109, 109, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at 21% 96%,
+      rgba(92, 92, 92, 0.05) 0%,
+      rgba(92, 92, 92, 0.05) 50%,
+      rgba(199, 199, 199, 0.05) 50%,
+      rgba(199, 199, 199, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at 25% 37%,
+      rgba(230, 230, 230, 0.05) 0%,
+      rgba(230, 230, 230, 0.05) 50%,
+      rgba(25, 25, 25, 0.05) 50%,
+      rgba(25, 25, 25, 0.05) 100%
+    ),
+    linear-gradient(90deg, rgb(153, 132, 249), rgb(244, 141, 212));
+}
+
+.box-two {
+  background-image: radial-gradient(
+      circle at 17% 1%,
+      rgba(198, 198, 198, 0.03) 0%,
+      rgba(198, 198, 198, 0.03) 50%,
+      rgba(42, 42, 42, 0.03) 50%,
+      rgba(42, 42, 42, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 8% 81%,
+      rgba(253, 253, 253, 0.03) 0%,
+      rgba(253, 253, 253, 0.03) 50%,
+      rgba(36, 36, 36, 0.03) 50%,
+      rgba(36, 36, 36, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 83% 29%,
+      rgba(164, 164, 164, 0.03) 0%,
+      rgba(164, 164, 164, 0.03) 50%,
+      rgba(60, 60, 60, 0.03) 50%,
+      rgba(60, 60, 60, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 96% 62%,
+      rgba(170, 170, 170, 0.03) 0%,
+      rgba(170, 170, 170, 0.03) 50%,
+      rgba(169, 169, 169, 0.03) 50%,
+      rgba(169, 169, 169, 0.03) 100%
+    ),
+    linear-gradient(338deg, rgb(55, 209, 190), rgb(17, 155, 210));
+}
+
+.box-three {
+  background-image: radial-gradient(
+      circle at 50% 30%,
+      rgba(209, 209, 209, 0.04) 0%,
+      rgba(209, 209, 209, 0.04) 50%,
+      rgba(138, 138, 138, 0.04) 50%,
+      rgba(138, 138, 138, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 9% 40%,
+      rgba(209, 209, 209, 0.04) 0%,
+      rgba(209, 209, 209, 0.04) 50%,
+      rgba(71, 71, 71, 0.04) 50%,
+      rgba(71, 71, 71, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 84% 81%,
+      rgba(147, 147, 147, 0.04) 0%,
+      rgba(147, 147, 147, 0.04) 50%,
+      rgba(253, 253, 253, 0.04) 50%,
+      rgba(253, 253, 253, 0.04) 100%
+    ),
+    linear-gradient(266deg, rgb(249, 134, 94), rgb(251, 106, 173));
+}
+
+
+.rmdp-today>span{
+  background-color: var(--clr-blue) !important;
+}
+
+.rmdp-selected>span{
+  background-color: var(--clr-pink) !important;
+}

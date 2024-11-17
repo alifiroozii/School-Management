@@ -87,16 +87,16 @@ const StudentList = () => {
           <TableSearch />
 
           <div className="flex items-center justify-start w-full gap-4 selt-end">
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PurpleLight">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full round-shadow">
               <Image src="/filter.png" alt="فیلتر" width={14} height={14} />
             </button>
 
-            <button className="w-8 h-8 flex items-center justify-center rounded-full bg-PurpleLight">
+            <button className="w-8 h-8 flex items-center justify-center rounded-full round-shadow">
               <Image src="/sort.png" alt="مرتب سازی" width={14} height={14} />
             </button>
 
             {role==='admin'&&(
-              <button className="w-8 h-8 flex items-center  justify-center rounded-full bg-PurpleLight">
+              <button className="w-8 h-8 flex items-center  justify-center rounded-full round-shadow">
               <Image src="/plus.png" alt="اضافه کردن" width={14} height={14} />
             </button>
             )}

@@ -26,7 +26,7 @@ const menuItems = [
       },
       {
         icon: "/subject.png",
-        label: "موضوع",
+        label: "دروس",
         href: "/list/subjects",
         visible: ["admin"],
       },
@@ -112,17 +112,17 @@ const menuItems = [
 ];
 const Menu = () => {
   return (
-    <div className="mt-4 text-sm">
+    <div className="mt-3 text-sm ">
       {menuItems.map((i) => {
         return (
-          <div className="flex flex-col gap-2  " key={i.title}>
+          <div className="flex flex-col justify-between  gap-2 mb-8" key={i.title}>
             {i.items.map((item) => {
               if (item.visible.includes(role)) {
                 return (
                   <Link
                     href={item.href}
                     key={item.label}
-                    className="flex justify-center items-center lg:justify-start gap-4 lg:py-1 transition mx-2 lg:mx-4 rounded-sm lg:pr-1 lg:hover:bg-[#ae94e534] text-gray-500"
+                    className="flex justify-center items-center pt-2 lg:justify-start gap-4 lg:py-1 transition mx-2 lg:mx-4 rounded-sm lg:pr-1 lg:hover:bg-[#ae94e534] text-gray-500"
                   >
                     <Image
                       src={item.icon}

@@ -39,7 +39,7 @@ export default function Example() {
             return (
               <div
                 key={event.id}
-                className="p-4 rounded-md border-2 border-gray-50 border-t-4 even:border-t-blueLight odd:border-t-PurpleLight"
+                className="p-4 rounded-md border-2 border-gray-50 border-t-4 even:border-t-blueDark odd:border-t-pinkDark"
               >
                 <div className="flex items-center mb-2 justify-between">
                   <h1 className="font-bold text-gray-700">{event.title}</h1>

@@ -18,15 +18,15 @@ const AdminPage = () => {
         <div className="flex justify-between gap-5 flex-wrap">
           <UserCard
             type="مدیر"
-            gradient="bg-gradient-to-r from-blueLight to-blueDark"
+            gradient="box-one"
           />
           <UserCard
             type="معلم"
-            gradient="bg-gradient-to-r from-PurpleLight to-PurpleDark"
+            gradient="box-two"
           />
           <UserCard
             type="دانش آموز"
-            gradient="bg-gradient-to-r from-pinkLight to-pinkDark"
+            gradient="box-three"
           />
         </div>
 

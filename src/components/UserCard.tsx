@@ -12,9 +12,9 @@ interface UserCardProps {
         <span className="text-[10px] bg-white px-2 py-1 rounded-full text-green-700">1403/8/8</span>
         <Image src="/more.png" alt="بیشتر.." width={20} height={20}/>
         </div>
-        <h1 className="text-2xl my-4 font-semibold">30</h1>
+        <h1 className="text-2xl my-4 font-semibold text-white">30</h1>
 
-        <h2 className="text-gray-900 text-sm">{type}</h2>
+        <h2 className="text-gray-100 text-sm">{type}</h2>
       </div>
     );
   };

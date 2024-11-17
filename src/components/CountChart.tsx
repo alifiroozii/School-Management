@@ -13,22 +13,22 @@ const data = [
   {
     name: "",
     count : 50,
-    fill: "#F7F8FA",
+    fill: "#fff",
   },
   {
     name: "دوازدهم",
     count: 26,
-    fill: "#f34178",
+    fill: "rgb(55, 209, 190)",
   },
   {
     name: "یازدهم",
     count: 35,
-    fill: "#ad94e5",
+    fill: "rgb(153, 132, 249)",
   },
   {
     name: "دهم",
     count: 20,
-    fill: "#65acf5",
+    fill: "#f34178",
   },
 ];
 

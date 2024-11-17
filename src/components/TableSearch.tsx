@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const TableSearch=()=>{
     return(
-        <div className="w-full md:w-auto flex  gap-2 rounded-full ring-[1.5px] text-xs ring-gray-300 p-1 px-2">
+        <div className="w-full md:w-auto flex  gap-2 rounded-full  text-xs input-search-table py-2  p-1 px-2 ">
         <div className="">
           <Image src="/search.png" width={15} height={15} alt="جستجو" />
         </div>

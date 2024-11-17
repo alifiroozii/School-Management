@@ -4,9 +4,7 @@ import React, { PureComponent } from "react";
 import {
   BarChart,
   Bar,
-  Rectangle,
   XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
@@ -64,7 +62,7 @@ const AttendanceChart = () => {
          
           <Tooltip  contentStyle={{borderRadius:'10px'}}/>
           <Legend align="right" />
-          <Bar dataKey="حاضرین" fill="#65acf5" legendType="circle" radius={[10,10,0,0]} />
+          <Bar dataKey="حاضرین" fill="rgb(55, 209, 190)" legendType="circle" radius={[10,10,0,0]} />
           <Bar dataKey="غایبین" fill="#f34178"  legendType="circle" radius={[10,10,0,0]}/>
           
         </BarChart>

@@ -1,88 +1,148 @@
 import React from "react";
-import "moment/locale/fa";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import moment from "moment";
-moment.locale("fa");
 
-interface CalendarEvent {
+type Session = {
   time: string;
-  subject: string;
-}
-
-const calendarEvents: Record<string, CalendarEvent[]> = {
-  شنبه: [
-    { time: "8:00 - 9:00", subject: "ریاضی" },
-    { time: "9:00 - 10:00", subject: "فیزیک" },
-    { time: "10:30 - 11:30", subject: "شیمی" },
-    { time: "12:00 - 01:00", subject: "دفاعی" },
-  ],
-  یکشنبه: [
-    { time: "8:00 - 9:00", subject: " انگلیسی" },
-    { time: "9:00 - 10:00", subject: "زیست‌شناسی" },
-    { time: "10:30 - 11:30", subject: "ادبیات " },
-    { time: "12:00 - 01:00", subject: "دینی" },
-  ],
-  دوشنبه: [
-    { time: "8:00 - 9:00", subject: "ریاضی" },
-    { time: "9:00 - 10:00", subject: "فیزیک" },
-    { time: "10:30 - 11:30", subject: "آمار" },
-    { time: "12:00 - 01:00", subject: "سلامت" },
-  ],
-  سه‌شنبه: [
-    { time: "8:00 - 9:00", subject: "شیمی" },
-    { time: "9:00 - 10:00", subject: " ادبیات" },
-    { time: "10:30 - 11:30", subject: "هنر" },
-    { time: "12:00 - 01:00", subject: "عربی" },
-  ],
-  چهارشنبه: [
-    { time: "8:00 - 9:00", subject: "ریاضی" },
-    { time: "9:00 - 10:00", subject: "فیزیک" },
-    { time: "10:30 - 11:30", subject: "تاریخ" },
-    { time: "12:00 - 01:00", subject: "دانش فنی" },
-  ],
-  پنجشنبه: [
-    { time: "8:00 - 9:00", subject: " انگلیسی" },
-    { time: "9:00 - 10:00", subject: "شیمی" },
-    { time: "10:30 - 11:30", subject: "زیست‌شناسی" },
-    { time: "12:00 - 01:00", subject: "تجارت" },
-  ],
+  saturday: string;
+  sunday: string;
+  monday: string;
+  tuesday: string;
+  wednesday: string;
+  thursday: string;
 };
 
-const BigCalendar = () => {
+const timetable: Session[] = [
+  {
+    time: "8:00",
+    saturday: "ریاضی",
+    sunday: "تجارت",
+    monday: "ریاضی",
+    tuesday: "شیمی",
+    wednesday: "ریاضی",
+    thursday: "انگلیسی",
+  },
+  {
+    time: "9:00",
+    saturday: "فیزیک",
+    sunday: "انگلیسی",
+    monday: "فیزیک",
+    tuesday: "ادبیات",
+    wednesday: "فیزیک",
+    thursday: "شیمی",
+  },
+  {
+    time: "10:30 ",
+    saturday: "شیمی",
+    sunday: "زیست‌شناسی",
+    monday: "آمار",
+    tuesday: "هنر",
+    wednesday: "تاریخ",
+    thursday: "زیست‌شناسی",
+  },
+  {
+    time: "12:00 ",
+    saturday: "دفاعی",
+    sunday: "دینی",
+    monday: "سلامت",
+    tuesday: "عربی",
+    wednesday: "دانش فنی",
+    thursday: "تجارت",
+  },
+];
+
+const days = [
+  "saturday",
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+] as const;
+const dayNames = [
+  "شنبه",
+  "یکشنبه",
+  "دوشنبه",
+  "سه‌شنبه",
+  "چهارشنبه",
+  "پنج‌شنبه",
+];
+
+const StyledTable = () => {
   return (
     <div className="container mx-auto p-6">
-      <table className="min-w-full table-auto bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg">
-        <thead>
-          <tr className="bg-blueDark text-white">
-            <th className="py-3 px-4 text-center">روز هفته</th>
-            <th className="py-3 px-4 text-center">زمان</th>
-            <th className="py-3 px-4 text-center">درس</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.keys(calendarEvents).map((day) => {
-            return calendarEvents[day].map((session, index) => (
+      <div className="hidden md:block lg:hidden xl:block">
+        <table className="min-w-full table-auto bg-white border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+          <thead>
+            <tr className="bg-blueDark text-white">
+              <th className="py-3 px-4 text-center">زمان</th>
+              <th className="py-3 px-4 text-center">شنبه</th>
+              <th className="py-3 px-4 text-center">یکشنبه</th>
+              <th className="py-3 px-4 text-center">دوشنبه</th>
+              <th className="py-3 px-4 text-center">سه‌شنبه</th>
+              <th className="py-3 px-4 text-center">چهارشنبه</th>
+              <th className="py-3 px-4 text-center">پنج‌شنبه</th>
+            </tr>
+          </thead>
+          <tbody>
+            {timetable.map((session, index) => (
               <tr
-                key={`${index}-${day}`}
-                className={`${index % 2 === 0 ? "bg-gray-100" : "bg-white"} `}
+                key={index}
+                className={`${index % 2 === 0 ? "bg-gray-100" : "bg-white"}`}
               >
-                {index === 0 && (
-                  <td
-                    rowSpan={calendarEvents[day].length}
-                    className="py-2 px-4 text-center font-bold border-r  border-gray-300"
-                  >
-                    {day}
-                  </td>
-                )}
-                <td className="py-2 px-4 text-center">{session.time}</td>
-                <td className="py-2 px-4 text-center">{session.subject}</td>
+                <td className="py-2 px-4 text-center border-r border-gray-300 font-bold">
+                  {session.time}
+                </td>
+                <td className="py-2 px-4 text-center border-r border-gray-300">
+                  {session.saturday}
+                </td>
+                <td className="py-2 px-4 text-center border-r border-gray-300">
+                  {session.sunday}
+                </td>
+                <td className="py-2 px-4 text-center border-r border-gray-300">
+                  {session.monday}
+                </td>
+                <td className="py-2 px-4 text-center border-r border-gray-300">
+                  {session.tuesday}
+                </td>
+                <td className="py-2 px-4 text-center border-r border-gray-300">
+                  {session.wednesday}
+                </td>
+                <td className="py-2 px-4 text-center">{session.thursday}</td>
               </tr>
-            ));
-          })}
-        </tbody>
-      </table>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile View */}
+      <div className="block md:hidden lg:block xl:hidden">
+        {days.map((day, dayIndex) => (
+          <div
+            key={dayIndex}
+            className="mb-4 border border-gray-300 rounded-lg shadow-lg"
+          >
+            <div className="bg-blueDark text-white py-2 px-4 font-bold text-center">
+              {dayNames[dayIndex]}
+            </div>
+            <div>
+              {timetable.map((session, index) => (
+                <div
+                  key={index}
+                  className="grid grid-cols-2 gap-1 border-b border-gray-300"
+                >
+                  <div className="py-2 px-4 text-center font-bold bg-gray-100">
+                    {session.time}
+                  </div>
+                  <div className="py-2 px-4 text-center">
+                    {session[day as keyof Session]}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default BigCalendar;
+export default StyledTable;

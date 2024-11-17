@@ -101,7 +101,7 @@ const FinanceChart = () => {
           <XAxis dataKey="name" />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="درامد" strokeWidth={3} stroke="#82ca9d" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="درامد" strokeWidth={3} stroke="rgb(55, 209, 190)" activeDot={{ r: 8 }} />
           <Line type="monotone" dataKey="هزینه" strokeWidth={3}  stroke="#f34178" />
         </LineChart>
       </ResponsiveContainer>
