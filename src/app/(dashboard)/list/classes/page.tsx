@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -33,15 +34,10 @@ const ClassList = () => {
 
       <td>
         <div className="flex items-center justify-end gap-1 md:gap-4">
-          <Link href={`/list/teachers/${item.id}`}>
-            <button className="w-7 h-7 flex justify-center items-center rounded-full bg-blueDark">
-              <Image src="/edit.png" alt="مشاهده" width={16} height={16} />
-            </button>
-          </Link>
+          <FormModal table="class" type="update" id={item.id} />
+
           {role === "admin" && (
-            <button className="w-7 h-7 flex justify-center rounded-full items-center bg-slate-500">
-              <Image src="/delete.png" alt="حذف" width={16} height={16} />
-            </button>
+            <FormModal table="class" type="delete" id={item.id} />
           )}
         </div>
       </td>
@@ -65,16 +61,7 @@ const ClassList = () => {
               <Image src="/sort.png" alt="مرتب سازی" width={14} height={14} />
             </button>
 
-            {role === "admin" && (
-              <button className="w-8 h-8 flex items-center  justify-center rounded-full round-shadow">
-                <Image
-                  src="/plus.png"
-                  alt="اضافه کردن"
-                  width={14}
-                  height={14}
-                />
-              </button>
-            )}
+            {role === "admin" && <FormModal table="teacher" type="create" />}
           </div>
         </div>
       </div>

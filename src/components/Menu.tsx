@@ -62,7 +62,7 @@ const menuItems = [
       },
       {
         icon: "/attendance.png",
-        label: "حضور و غیاب",
+        label: "حضور و غیاب *",
         href: "/list/attendance",
         visible: ["admin", "teacher", "student"],
       },
@@ -74,7 +74,7 @@ const menuItems = [
       },
       {
         icon: "/message.png",
-        label: "پیام",
+        label: "پیام *",
         href: "/list/messages",
         visible: ["admin", "teacher", "student"],
       },
@@ -91,19 +91,19 @@ const menuItems = [
     items: [
       {
         icon: "/profile.png",
-        label: "پروفایل",
+        label: "پروفایل*",
         href: "/profile",
         visible: ["admin", "teacher", "student"],
       },
       {
         icon: "/setting.png",
-        label: "تنظیامات",
+        label: "تنظیامات*",
         href: "/settings",
         visible: ["admin", "teacher", "student"],
       },
       {
         icon: "/logout.png",
-        label: "خروج",
+        label: "خروج*",
         href: "/logout",
         visible: ["admin", "teacher", "student"],
       },
@@ -122,7 +122,7 @@ const Menu = () => {
                   <Link
                     href={item.href}
                     key={item.label}
-                    className="flex justify-center items-center pt-2 lg:justify-start gap-4 lg:py-1 transition mx-2 lg:mx-4 rounded-sm lg:pr-1 lg:hover:bg-[#ae94e534] text-gray-500"
+                    className="flex justify-center items-center pt-2 lg:justify-start gap-4 lg:py-1 transition mx-2 lg:mx-4 rounded-sm lg:pr-1 lg:hover:bg-[#37d1bf1c] text-gray-500"
                   >
                     <Image
                       src={item.icon}
