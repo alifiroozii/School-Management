@@ -19,11 +19,11 @@ const Navbar = () => {
       {/* icon , user */}
       <div className="flex justify-start items-center">
         <div className="flex items-center gap-3 ml-5">
-          <div className="bg-white px-1  round-shadow rounded-full w-8 h-8 flex justify-center items-center cursor-pointer">
+          {/* <div className="bg-white px-1  round-shadow rounded-full w-8 h-8 flex justify-center items-center cursor-pointer">
             <Image src="/message.png" width={20} height={20} alt="پیغام" />
-          </div>
+          </div> */}
 
-          <div className="bg-white px-2 round-shadow rounded-full w-8 h-8 flex justify-center items-center relative cursor-pointer">
+          {/* <div className="bg-white px-2 round-shadow rounded-full w-8 h-8 flex justify-center items-center relative cursor-pointer">
             <Image
               src="/announcement.png"
               width={20}
@@ -33,7 +33,7 @@ const Navbar = () => {
             <div className="absolute -top-2 right-5 w-4 text-xs h-4 rounded-full flex items-center justify-center bg-purple-500 text-white z-10">
               1
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex  ">
